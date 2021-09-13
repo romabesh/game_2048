@@ -31,7 +31,10 @@ void GameField::printGameField(int** field, int height, int width)
 		cout << endl << "|   " << "\t" << "|   " << "\t" << "|   " << "\t" << "|   " << "\t" << "|   " << "\t" << endl;
 		for (int j = 0; j < width; j++)
 		{
-			cout << "|   " << field[i][j] << "\t";
+			if (field[i][j] == 0)
+				cout << "|   " << ' ' << "\t";
+			else
+				cout << "|   " << field[i][j] << "\t";
 		}
 		cout << "|";
 		cout << endl << "|   " << "\t" << "|   " << "\t" << "|   " << "\t" << "|   " << "\t" << "|   " << "\t" << endl;
@@ -227,3 +230,4 @@ void GameField::gameController(char symbol)
 		generateNewCell(field, height, width);
 	}
 }
+
